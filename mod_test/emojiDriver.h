@@ -1,0 +1,18 @@
+#ifndef EMOJI_DEVICE_DRIVER_H_
+#define EMOJI_DEVICE_DRIVER_H_
+
+#include <linux/ioctl.h>
+
+#define VALUES_BUFFER 256
+
+#define EMOJI_DEVICE_IOC_TYPE 'M'
+
+#define EMOJI_DEVICE_SET_VALUES  _IOW(EMOJI_DEVICE_IOC_TYPE, 1, int)
+
+#define EMOJI_DEVICE_GET_VALUES  _IOR(EMOJI_DEVICE_IOC_TYPE, 2, int)
+
+#define EMOJI_DEVICE_CLEAR_VALUES 3
+
+
+#endif /* EMOJI_DEVICE_DRIVER_H_ */
+

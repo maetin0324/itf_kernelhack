@@ -1,0 +1,1 @@
+cmd_/home/tsukubataro/emoji_dev/EmojiDeviceModule.mod := printf '%s\n'   emojiDriver.o | awk '!x[$$0]++ { print("/home/tsukubataro/emoji_dev/"$$0) }' > /home/tsukubataro/emoji_dev/EmojiDeviceModule.mod

@@ -1,0 +1,1 @@
+cmd_/home/tsukubataro/kthread/KthreadModule.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/tsukubataro/kthread/KthreadModule.ko /home/tsukubataro/kthread/KthreadModule.o /home/tsukubataro/kthread/KthreadModule.mod.o;  true
