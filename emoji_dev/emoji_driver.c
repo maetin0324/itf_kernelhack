@@ -18,7 +18,7 @@ MODULE_LICENSE("Dual BSD/GPL");
 #define NUM_BUFFER 256
 
 static const unsigned int MINOR_BASE = 0;
-static const unsigned int MINOR_NUM = 2;
+static const unsigned int MINOR_NUM = 1;
 
 static unsigned int emoji_device_major;
 
