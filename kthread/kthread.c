@@ -1,10 +1,10 @@
 #include <linux/init.h>  
 #include <linux/module.h>  
-#include <linux/types.h>          /* dev_t */  
-#include <linux/kdev_t.h>         /* MKDEV(), MAJOR() */  
-#include <linux/fs.h>             /* register_chrdev_region(), alloc_chrdev_region(), unregister_chrdev() */  
-#include <linux/kthread.h>            /* kthread_run(), kthread_should_stop() */  
-#include <linux/time64.h>           /* do_gettimeofday() */
+#include <linux/types.h>
+#include <linux/kdev_t.h>
+#include <linux/fs.h>
+#include <linux/kthread.h>
+#include <linux/time64.h>
   
 MODULE_LICENSE("GPL v2");  
   
@@ -31,7 +31,6 @@ static void my_kthread_main(void)
   set_current_state(TASK_INTERRUPTIBLE);  
   schedule_timeout(1 * HZ);  
 
-  /* 起動後の処理 */  
   pr_info("my_kthread_main:%ld\n", get_timestamp());  
 }  
   
@@ -55,12 +54,10 @@ static int skel_init(void)
   pr_info("%s\n", __FUNCTION__);  
 
   if (drv_major) {  
-    /* 指定デバイス番号を登録する */  
     dev = MKDEV(drv_major, drv_minor);  
     ret = register_chrdev_region(dev, drv_nr_devs, SKEL_DRV_NAME);  
   }  
   else {  
-    /* デバイス番号を動的に確保する */  
     ret = alloc_chrdev_region(&dev, drv_minor, drv_nr_devs, SKEL_DRV_NAME);  
     drv_major = MAJOR(dev);  
   }  
@@ -72,7 +69,6 @@ static int skel_init(void)
     pr_info("SKEL_DRV: char driver major number is %d\n", drv_major);  
   }  
 
-  /* カーネルスレッドの起動 */  
   kthread_tsk = kthread_run(my_kthread, NULL, "skel kthread");  
   if (IS_ERR(kthread_tsk)) {  
     pr_err("SKEL_DRV: kthread_run failed\n");  
