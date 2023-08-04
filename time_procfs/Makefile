@@ -1,7 +1,7 @@
-CFILES = my_procfs.c
+CFILES = time_procfs.c
 
-obj-m := MyProcfs.o
-MyProcfs-objs := $(CFILES:.c=.o)
+obj-m := TimeProcfs.o
+TimeProcfs-objs := $(CFILES:.c=.o)
 
 ccflags-y += -std=gnu99 -Wall -Wno-declaration-after-statement
 

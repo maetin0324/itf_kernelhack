@@ -1,0 +1,1 @@
+cmd_/home/tsukubataro/itf_kernelhack/my_procfs/TimeProcfs.mod := printf '%s\n'   time_procfs.o | awk '!x[$$0]++ { print("/home/tsukubataro/itf_kernelhack/my_procfs/"$$0) }' > /home/tsukubataro/itf_kernelhack/my_procfs/TimeProcfs.mod

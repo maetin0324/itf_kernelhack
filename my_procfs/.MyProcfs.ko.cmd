@@ -1,1 +1,0 @@
-cmd_/home/tsukubataro/my_procfs/MyProcfs.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/tsukubataro/my_procfs/MyProcfs.ko /home/tsukubataro/my_procfs/MyProcfs.o /home/tsukubataro/my_procfs/MyProcfs.mod.o;  true

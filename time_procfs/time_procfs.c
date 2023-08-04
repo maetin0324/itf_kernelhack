@@ -2,33 +2,46 @@
 #include <linux/kernel.h>
 #include <linux/fs.h>
 #include <linux/proc_fs.h> // proc_create
+#include <linux/time64.h> 
 #include <asm/uaccess.h> // copy_from_user
 
-// /proc/PROCNAMEにインタフェースを作る
-#define PROCNAME "driver/modtest"
+#define PROCNAME "driver/time_procfs"
 #define MAXBUF 1024
 
-MODULE_DESCRIPTION("modtest");
+MODULE_DESCRIPTION("time_procfs");
 MODULE_LICENSE("GPL");
 
-static char modtest_buf[MAXBUF] = "Hello World!\n";
-static int buflen = 1024;
+char modtest_buf[MAXBUF];
 
-// 読み込み
+static long get_timestamp(void)  
+{  
+  long timestamp;  
+  struct timespec64 ts;  
+
+  ktime_get_real_ts64(&ts);  
+  timestamp = ts.tv_sec*1000000000L + ts.tv_nsec;  
+
+  return timestamp;  
+}  
+
 static ssize_t proc_read(struct file *file, char __user *buf, size_t count, loff_t *f_pos)
 {
-    if (*f_pos >= buflen) {
+    if (*f_pos >= MAXBUF) {
         return 0;
     }
 
-    if (copy_to_user(buf, modtest_buf, buflen) > 0) {
+    if (snprintf(modtest_buf, MAXBUF, "%ld\n", get_timestamp()) < 0) {
         return -EFAULT;
     }
-    *f_pos += buflen;
 
-    printk(KERN_INFO "proc_read len = %d\n", buflen);
+    if (copy_to_user(buf, modtest_buf, MAXBUF) > 0) {
+        return -EFAULT;
+    }
+    *f_pos += MAXBUF;
 
-    return buflen;
+    printk(KERN_INFO "proc_read len = %d\n", MAXBUF);
+
+    return MAXBUF;
 }
 
 struct proc_ops proc_ops = {
