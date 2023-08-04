@@ -1,1 +1,1 @@
-/home/tsukubataro/itf_kernelhack/my_procfs/time_procfs.o
+/home/tsukubataro/itf_kernelhack/time_procfs/time_procfs.o

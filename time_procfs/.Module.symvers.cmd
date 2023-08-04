@@ -1,1 +1,1 @@
-cmd_/home/tsukubataro/itf_kernelhack/my_procfs/Module.symvers :=  scripts/mod/modpost       -o /home/tsukubataro/itf_kernelhack/my_procfs/Module.symvers -T /home/tsukubataro/itf_kernelhack/my_procfs/modules.order -i Module.symvers -e 
+cmd_/home/tsukubataro/itf_kernelhack/time_procfs/Module.symvers :=  scripts/mod/modpost       -o /home/tsukubataro/itf_kernelhack/time_procfs/Module.symvers -T /home/tsukubataro/itf_kernelhack/time_procfs/modules.order -i Module.symvers -e 
