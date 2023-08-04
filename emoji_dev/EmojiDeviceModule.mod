@@ -1,1 +1,1 @@
-/home/tsukubataro/emoji_dev/emojiDriver.o
+/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o

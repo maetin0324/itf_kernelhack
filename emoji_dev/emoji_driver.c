@@ -1,4 +1,4 @@
-#include "emojiDriver.h"
+#include "emoji_driver.h"
 
 #include <linux/init.h>
 #include <linux/module.h>
@@ -41,7 +41,7 @@ static edict_t person_bowing = { ":bow:", 0xf09f99870a };
 // other: stop
 int emoji_state = 0;
 
-static int emojidriver_uevent(const struct device *dev, struct kobj_uevent_env *env)
+static int emoji_driver_uevent(const struct device *dev, struct kobj_uevent_env *env)
 {
 	add_uevent_var(env, "DEVMODE=%#o", 0666);
 	return 0;
@@ -192,7 +192,7 @@ static int emoji_device_init(void)
 		return -1;
 	}
 
-	emoji_device_class->dev_uevent = emojidriver_uevent;
+	emoji_device_class->dev_uevent = emoji_driver_uevent;
 
 	for (int minor = MINOR_BASE; minor < MINOR_BASE + MINOR_NUM; minor++) {
 		device_create(emoji_device_class, NULL, MKDEV(emoji_device_major, minor), NULL, "emoji_device%d", minor);

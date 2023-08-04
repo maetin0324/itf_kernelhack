@@ -1,1 +1,1 @@
-cmd_/home/tsukubataro/emoji_dev/modules.order := {   echo /home/tsukubataro/emoji_dev/EmojiDeviceModule.o; :; } > /home/tsukubataro/emoji_dev/modules.order
+cmd_/home/tsukubataro/itf_kernelhack/emoji_dev/modules.order := {   echo /home/tsukubataro/itf_kernelhack/emoji_dev/EmojiDeviceModule.o; :; } > /home/tsukubataro/itf_kernelhack/emoji_dev/modules.order

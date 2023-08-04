@@ -1,8 +1,8 @@
-cmd_/home/tsukubataro/emoji_dev/emojiDriver.o := gcc -Wp,-MMD,/home/tsukubataro/emoji_dev/.emojiDriver.o.d -nostdinc -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/compiler-version.h -include ./include/linux/kconfig.h -include ./include/linux/compiler_types.h -D__KERNEL__ -Werror -fmacro-prefix-map=./= -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Wno-format-security -funsigned-char -std=gnu11 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 -fno-allow-store-data-races -Wframe-larger-than=2048 -fstack-protector-strong -Wno-main -Wno-unused-but-set-variable -Wno-unused-const-variable -fomit-frame-pointer -fno-stack-clash-protection -falign-functions=16 -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wcast-function-type -Wno-stringop-truncation -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -Wno-array-bounds -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wno-packed-not-aligned -g -gdwarf-5 -std=gnu99 -Wall -Wno-declaration-after-statement  -DMODULE  -DKBUILD_BASENAME='"emojiDriver"' -DKBUILD_MODNAME='"EmojiDeviceModule"' -D__KBUILD_MODNAME=kmod_EmojiDeviceModule -c -o /home/tsukubataro/emoji_dev/emojiDriver.o /home/tsukubataro/emoji_dev/emojiDriver.c  
+cmd_/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o := gcc -Wp,-MMD,/home/tsukubataro/itf_kernelhack/emoji_dev/.emoji_driver.o.d -nostdinc -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/compiler-version.h -include ./include/linux/kconfig.h -include ./include/linux/compiler_types.h -D__KERNEL__ -Werror -fmacro-prefix-map=./= -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Wno-format-security -funsigned-char -std=gnu11 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-address-of-packed-member -O2 -fno-allow-store-data-races -Wframe-larger-than=2048 -fstack-protector-strong -Wno-main -Wno-unused-but-set-variable -Wno-unused-const-variable -fomit-frame-pointer -fno-stack-clash-protection -falign-functions=16 -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -Wcast-function-type -Wno-stringop-truncation -Wno-stringop-overflow -Wno-restrict -Wno-maybe-uninitialized -Wno-array-bounds -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -fno-strict-overflow -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wno-packed-not-aligned -g -gdwarf-5 -std=gnu99 -Wall -Wno-declaration-after-statement  -DMODULE  -DKBUILD_BASENAME='"emoji_driver"' -DKBUILD_MODNAME='"EmojiDeviceModule"' -D__KBUILD_MODNAME=kmod_EmojiDeviceModule -c -o /home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o /home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.c  
 
-source_/home/tsukubataro/emoji_dev/emojiDriver.o := /home/tsukubataro/emoji_dev/emojiDriver.c
+source_/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o := /home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.c
 
-deps_/home/tsukubataro/emoji_dev/emojiDriver.o := \
+deps_/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o := \
   include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   include/linux/kconfig.h \
@@ -22,7 +22,7 @@ deps_/home/tsukubataro/emoji_dev/emojiDriver.o := \
     $(wildcard include/config/ARCH_USE_BUILTIN_BSWAP) \
     $(wildcard include/config/SHADOW_CALL_STACK) \
     $(wildcard include/config/KCOV) \
-  /home/tsukubataro/emoji_dev/emojiDriver.h \
+  /home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.h \
   include/uapi/linux/ioctl.h \
   arch/x86/include/generated/uapi/asm/ioctl.h \
   include/asm-generic/ioctl.h \
@@ -1003,6 +1003,6 @@ deps_/home/tsukubataro/emoji_dev/emojiDriver.o := \
   arch/x86/include/asm/device.h \
   include/linux/pm_wakeup.h \
 
-/home/tsukubataro/emoji_dev/emojiDriver.o: $(deps_/home/tsukubataro/emoji_dev/emojiDriver.o)
+/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o: $(deps_/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o)
 
-$(deps_/home/tsukubataro/emoji_dev/emojiDriver.o):
+$(deps_/home/tsukubataro/itf_kernelhack/emoji_dev/emoji_driver.o):

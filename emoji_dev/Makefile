@@ -1,4 +1,4 @@
-CFILES = emojiDriver.c
+CFILES = emoji_driver.c
 
 obj-m := EmojiDeviceModule.o
 EmojiDeviceModule-objs := $(CFILES:.c=.o)

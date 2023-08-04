@@ -1,1 +1,1 @@
-cmd_/home/tsukubataro/emoji_dev/EmojiDeviceModule.mod := printf '%s\n'   emojiDriver.o | awk '!x[$$0]++ { print("/home/tsukubataro/emoji_dev/"$$0) }' > /home/tsukubataro/emoji_dev/EmojiDeviceModule.mod
+cmd_/home/tsukubataro/itf_kernelhack/emoji_dev/EmojiDeviceModule.mod := printf '%s\n'   emoji_driver.o | awk '!x[$$0]++ { print("/home/tsukubataro/itf_kernelhack/emoji_dev/"$$0) }' > /home/tsukubataro/itf_kernelhack/emoji_dev/EmojiDeviceModule.mod
