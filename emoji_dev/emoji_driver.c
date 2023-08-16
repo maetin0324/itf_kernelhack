@@ -82,7 +82,9 @@ static ssize_t emoji_device_read(struct file *filp, char __user *buf, size_t cou
 
 	struct _emoji_data *p = filp->private_data;
 	char cnv_buffer[NUM_BUFFER];
-	if (count > NUM_BUFFER) count = NUM_BUFFER;
+
+	if (count > NUM_BUFFER - *f_pos) count = NUM_BUFFER - *f_pos;
+
 	if (emoji_state == 0) {
 		if (strcmp(person_bowing.emoji_name, p->buffer) == 0) {
 			snprintf(cnv_buffer, NUM_BUFFER, "%lx", person_bowing.emoji_code);
@@ -106,6 +108,10 @@ static ssize_t emoji_device_write(struct file *filp, const char __user *buf, siz
 	printk("mydevice_write");
 
 	struct _emoji_data *p = filp->private_data;
+
+	if (count > NUM_BUFFER - *f_pos) count = NUM_BUFFER - *f_pos;
+
+
 	if (copy_from_user(p->buffer, buf, count) != 0){
 		return -EFAULT;
 	}
@@ -184,20 +190,6 @@ static int emoji_device_init(void)
 		return -1;
 	}
 
-	emoji_device_class = class_create(THIS_MODULE, "emoji_device");
-	if (IS_ERR(emoji_device_class)){
-		printk(KERN_ERR "class_create\n");
-		cdev_del(&emoji_device_cdev);
-		unregister_chrdev_region(dev, MINOR_NUM);
-		return -1;
-	}
-
-	emoji_device_class->dev_uevent = emoji_driver_uevent;
-
-	for (int minor = MINOR_BASE; minor < MINOR_BASE + MINOR_NUM; minor++) {
-		device_create(emoji_device_class, NULL, MKDEV(emoji_device_major, minor), NULL, "emoji_device%d", minor);
-	}
-
 	return 0;
 }
 
@@ -206,12 +198,6 @@ static void emoji_device_exit(void)
 	printk("mydevice_exit\n");
 
 	dev_t dev = MKDEV(emoji_device_major, MINOR_BASE);
-
-	for (int minor =  MINOR_BASE; minor < MINOR_BASE + MINOR_NUM; minor++){
-		device_destroy(emoji_device_class, MKDEV(emoji_device_major, minor));
-	}
-
-	class_destroy(emoji_device_class);
 
 	cdev_del(&emoji_device_cdev);
 

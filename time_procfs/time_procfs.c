@@ -1,9 +1,9 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/fs.h>
-#include <linux/proc_fs.h> // proc_create
+#include <linux/proc_fs.h> 
 #include <linux/time64.h> 
-#include <asm/uaccess.h> // copy_from_user
+#include <asm/uaccess.h>
 
 #define PROCNAME "driver/time_procfs"
 #define MAXBUF 1024
@@ -48,12 +48,10 @@ struct proc_ops proc_ops = {
     .proc_read = proc_read,
 };
 
-// モジュール初期化
 static int __init modtest_module_init(void)
 {
     struct proc_dir_entry *entry;
 
-//  /proc/PROCNAME にインタフェース作成
     entry = proc_create(PROCNAME, 0666, NULL, &proc_ops);
 
     if (!entry) {
@@ -64,12 +62,9 @@ static int __init modtest_module_init(void)
     return 0;
 }
 
-// モジュール解放
 static void __exit modtest_module_exit(void)
 {
-//  インタフェース削除
     remove_proc_entry(PROCNAME, NULL);
-
     printk(KERN_INFO "modtest is removed\n");
 }
 

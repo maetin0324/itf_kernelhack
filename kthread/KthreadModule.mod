@@ -1,1 +1,1 @@
-/home/tsukubataro/kthread/kthread.o
+/home/tsukubataro/itf_kernelhack/kthread/kthread.o

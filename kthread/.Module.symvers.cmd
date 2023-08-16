@@ -1,1 +1,1 @@
-cmd_/home/tsukubataro/kthread/Module.symvers :=  scripts/mod/modpost       -o /home/tsukubataro/kthread/Module.symvers -T /home/tsukubataro/kthread/modules.order -i Module.symvers -e 
+cmd_/home/tsukubataro/itf_kernelhack/kthread/Module.symvers :=  scripts/mod/modpost       -o /home/tsukubataro/itf_kernelhack/kthread/Module.symvers -T /home/tsukubataro/itf_kernelhack/kthread/modules.order -i Module.symvers -e 
