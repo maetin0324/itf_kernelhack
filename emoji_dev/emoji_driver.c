@@ -41,13 +41,6 @@ static edict_t person_bowing = { ":bow:", 0xf09f99870a };
 // other: stop
 int emoji_state = 0;
 
-static int emoji_driver_uevent(const struct device *dev, struct kobj_uevent_env *env)
-{
-	add_uevent_var(env, "DEVMODE=%#o", 0666);
-	return 0;
-}
-
-
 static int emoji_device_open(struct inode *inode, struct file *file)
 {
 	printk("mydevice_open");
