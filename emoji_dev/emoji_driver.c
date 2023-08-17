@@ -76,7 +76,7 @@ static ssize_t emoji_device_read(struct file *filp, char __user *buf, size_t cou
 	struct _emoji_data *p = filp->private_data;
 	char cnv_buffer[NUM_BUFFER];
 
-	if (count > NUM_BUFFER - *f_pos) count = NUM_BUFFER - *f_pos;
+	if (count > NUM_BUFFER ) count = NUM_BUFFER;
 
 	if (emoji_state == 0) {
 		if (strcmp(person_bowing.emoji_name, p->buffer) == 0) {
@@ -102,7 +102,7 @@ static ssize_t emoji_device_write(struct file *filp, const char __user *buf, siz
 
 	struct _emoji_data *p = filp->private_data;
 
-	if (count > NUM_BUFFER - *f_pos) count = NUM_BUFFER - *f_pos;
+	if (count > NUM_BUFFER) count = NUM_BUFFER;
 
 
 	if (copy_from_user(p->buffer, buf, count) != 0){
