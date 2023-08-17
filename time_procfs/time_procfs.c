@@ -30,6 +30,10 @@ static ssize_t proc_read(struct file *file, char __user *buf, size_t count, loff
         return 0;
     }
 
+    if (count > MAXBUF - *f_pos) {
+        count = MAXBUF - *f_pos;
+    }
+
     if (snprintf(modtest_buf, MAXBUF, "%ld\n", get_timestamp()) < 0) {
         return -EFAULT;
     }

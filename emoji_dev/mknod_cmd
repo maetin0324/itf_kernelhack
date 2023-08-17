@@ -1,0 +1,1 @@
+sudo mknod --mode=666 /dev/emoji_device c  0
