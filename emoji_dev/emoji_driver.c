@@ -153,8 +153,6 @@ struct file_operations s_emoji_device_fops = {
 	.compat_ioctl   = emoji_device_ioctl,
 };
 
-static struct class *emoji_device_class = NULL;
-
 static int emoji_device_init(void)
 {
 	printk("mydevice_init\n");
